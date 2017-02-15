@@ -1,0 +1,9 @@
+version: "3"
+services:
+  python:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/local/pytools
+    command: python /usr/local/pytools/temp.py
