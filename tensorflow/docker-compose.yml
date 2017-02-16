@@ -6,4 +6,5 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/usr/local/pytools
-    command: python /usr/local/pytools/temp.py
+    tty: true
+    command: python /usr/local/pytools/tensorflow-mnist-tutorial/mnist_1.0_softmax.py
