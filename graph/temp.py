@@ -1,24 +1,26 @@
-import asyncio
-import functools
+# from py2neo import Graph, Path
+# graph = Graph('http://192.168.1.57:7474/data/',username='neo4j',password='password')
 
+# tx = graph.begin()
+# for name in ["Alice", "Bob", "Carol"]:
+#     tx.append("CREATE (person:Person {name:{name}}) RETURN person", name=name)
+# alice, bob, carol = [result.one for result in tx.commit()]
 
-def callback(arg, *, kwarg='default'):
-    print('callback invoked with {} and {}'.format(arg, kwarg))
+# friends = Path(alice, "KNOWS", bob, "KNOWS", carol)
+# graph.create(friends)
 
+from neo4j.v1 import GraphDatabase, basic_auth
 
-async def main(loop):
-    print('registering callbacks')
-    loop.call_soon(callback, 1)
-    wrapped = functools.partial(callback, kwarg='not default')
-    loop.call_soon(wrapped, 2)
+driver = GraphDatabase.driver("bolt://192.168.1.57:7687", auth=basic_auth("neo4j", "password"))
+session = driver.session()
 
-    await asyncio.sleep(0.1)
+session.run("CREATE (a:Person {name: {name}, title: {title}})",
+            {"name": "Arthur", "title": "King"})
 
+result = session.run("MATCH (a:Person) WHERE a.name = {name} "
+                    "RETURN a.name AS name, a.title AS title",
+                    {"name": "Arthur"})
+for record in result:
+    print("%s %s" % (record["title"], record["name"]))
 
-event_loop = asyncio.get_event_loop()
-try:
-    print('entering event loop')
-    event_loop.run_until_complete(main(event_loop))
-finally:
-    print('closing event loop')
-    event_loop.close()
+session.close()

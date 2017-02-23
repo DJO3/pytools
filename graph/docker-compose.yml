@@ -6,10 +6,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/usr/local/pytools
-    links:
-      - neo4j
-    command: python /usr/local/pytools/temp.py
   neo4j:
+    restart: always
     build:
       context: ./neo4j
       dockerfile: Dockerfile
