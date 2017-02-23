@@ -1,0 +1,21 @@
+version: "3"
+services:
+  python:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/local/pytools
+    links:
+      - neo4j
+    command: python /usr/local/pytools/temp.py
+  neo4j:
+    build:
+      context: ./neo4j
+      dockerfile: Dockerfile
+    ports: 
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - $HOME/neo4j/data:/data
+    
