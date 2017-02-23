@@ -1,0 +1,1 @@
+docker run graph_python:latest bash -c "python /usr/local/pytools/temp.py"
