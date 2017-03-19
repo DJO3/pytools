@@ -6,4 +6,4 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/usr/local/pytools
-    command: bash -c "cd /usr/local/pytools/tutorial && behave"
+    command: bash -c "cd /usr/local/pytools/tutorial && behave --junit --junit-directory ./junit"
