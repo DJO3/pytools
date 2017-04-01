@@ -2,9 +2,21 @@ version: "3"
 services:
   ansible:
     build:
-      context: ./
+      context: ./host
       dockerfile: Dockerfile
     volumes:
-      - ./etc/ansible/hosts:/etc/ansible/hosts
+      - ./host/etc/ansible/hosts:/etc/ansible/hosts
+      - ./host/etc/ssh:/etc/ssh
     stdin_open: true
     container_name: ansible
+    links: 
+      - client
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports: 
+      - "22:22"
+    stdin_open: true
+    container_name: client
+    command: ["/usr/sbin/sshd", "-D"]
