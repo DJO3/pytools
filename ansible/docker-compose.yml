@@ -1,0 +1,10 @@
+version: "3"
+services:
+  ansible:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./etc/ansible/hosts:/etc/ansible/hosts
+    stdin_open: true
+    container_name: ansible
