@@ -1,0 +1,16 @@
+# Requirements
+1. [Docker Community Edition] (https://www.docker.com/community-edition)
+    * Tested on macOS Sierra 10.12.4
+    * Docker CE Version 17.03.1-ce-mac5 (16048)
+
+# Getting Started
+1. `git clone https://github.com/DJO3/pytools.git`
+2. `cd pytools/ansible`
+3. `docker-compose build`
+4. `docker-compose up -d`
+
+# Example Commands
+1. Enter ansible container
+    * `docker exec -it ansible bash`
+2. Ping Hosts
+    * `ansible all -m ping`
