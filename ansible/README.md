@@ -1,5 +1,5 @@
 # Requirements
-1. [Docker Community Edition] (https://www.docker.com/community-edition)
+1. [Docker Community Edition](https://www.docker.com/community-edition)
     * Tested on macOS Sierra 10.12.4
     * Docker CE Version 17.03.1-ce-mac5 (16048)
 
