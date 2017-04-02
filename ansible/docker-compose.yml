@@ -6,7 +6,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./host/etc/ansible/hosts:/etc/ansible/hosts
-      - ./host/etc/ssh:/etc/ssh
     stdin_open: true
     container_name: ansible
     links: 
@@ -17,6 +16,8 @@ services:
       dockerfile: Dockerfile
     ports: 
       - "22:22"
+    volumes: 
+      - ./client/etc/ssh:/root/.ssh
     stdin_open: true
     container_name: client
     command: ["/usr/sbin/sshd", "-D"]
