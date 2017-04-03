@@ -18,3 +18,7 @@
     * `ansible all -a "/bin/echo hello"`
 4. Ping hosts in a group
     * `ansible containers -m ping`
+5. Execute playbook
+    * `ansible-playbook /etc/ansible/containers.yml`
+6. Run playbook in parallel 
+    * `ansible-playbook /etc/ansible/containers.yml -f 10`

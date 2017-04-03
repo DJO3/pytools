@@ -7,6 +7,7 @@ services:
     volumes:
       - ./host/etc/ansible/hosts:/etc/ansible/hosts
       - ./host/etc/ansible/ansible.cfg:/etc/ansible/ansible.cfg
+      - ./host/etc/ansible/containers.yml:/etc/ansible/containers.yml
     stdin_open: true
     container_name: ansible
     links: 
