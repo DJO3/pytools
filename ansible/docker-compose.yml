@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./host/etc/ansible/hosts:/etc/ansible/hosts
+      - ./host/etc/ansible/ansible.cfg:/etc/ansible/ansible.cfg
     stdin_open: true
     container_name: ansible
     links: 

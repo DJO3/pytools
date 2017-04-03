@@ -12,5 +12,7 @@
 # Example Commands
 1. Enter ansible container
     * `docker exec -it ansible bash`
-2. Ping Hosts
+2. Ping all hosts
     * `ansible all -m ping`
+3. Execute command on all hosts
+    * `ansible all -a "/bin/echo hello"`
