@@ -16,3 +16,5 @@
     * `ansible all -m ping`
 3. Execute command on all hosts
     * `ansible all -a "/bin/echo hello"`
+4. Ping hosts in a group
+    * `ansible containers -m ping`
