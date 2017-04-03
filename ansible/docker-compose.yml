@@ -11,14 +11,22 @@ services:
     container_name: ansible
     links: 
       - client
+      - client2
   client:
     build:
       context: ./client
       dockerfile: Dockerfile
-    ports: 
-      - "22:22"
     volumes: 
       - ./client/etc/ssh:/root/.ssh
     stdin_open: true
     container_name: client
+    command: ["/usr/sbin/sshd", "-D"]
+  client2:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes: 
+      - ./client/etc/ssh:/root/.ssh
+    stdin_open: true
+    container_name: client2
     command: ["/usr/sbin/sshd", "-D"]
