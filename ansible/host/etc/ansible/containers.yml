@@ -4,18 +4,17 @@
     max_clients: 10
   remote_user: root
   tasks:
-  - name: ensure apache is at the latest version
+  - name: check if "python" is present
     yum:
-      name: httpd
+      name: python
+      state: present
+  - name: check if "sendmail" is installed
+    yum:
+      list: sendmail
+    register: sendmail_installed
+  - name: install "sendmail" if it does not exist
+    yum:
+      name: sendmail
       state: latest
-    notify:
-    - restart apache
-  - name: ensure apache is running
-    service:
-      name: httpd
-      state: started
-  handlers:
-    - name: restart apache
-      service:
-        name: httpd
-        state: restarted
+    when:  (sendmail_installed.results|length == 1) or (sendmail_installed.results[1].yumstate != 'installed')
+        
