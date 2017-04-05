@@ -1,2 +1,4 @@
 
 TESTS-*.xml
+
+ansible/db/data/*
