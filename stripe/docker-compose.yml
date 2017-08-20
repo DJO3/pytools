@@ -1,0 +1,11 @@
+version: "3"
+services:
+  python:
+    env_file: .env
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: stripe
+    volumes:
+      - ./:/usr/local/stripe
+    # command: python /usr/local/stripe/temp.py
