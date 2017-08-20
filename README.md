@@ -9,6 +9,7 @@ Python Tools that I want to know better.
 - [Asyncio](#asyncio)
 - [Behavior Driven Development](#behavior-driven-development)
 - [Graph Databases](#graph-databases)
+- [Stripe](#stripe)
 - [TensforFlow](#tensorflow)
 
 # Summary
@@ -25,6 +26,9 @@ All projects are for personal development and utilize Docker for reproducibility
 
 # Graph Databases
 [neo4j](https://neo4j.com/developer/)
+
+# Stripe
+[stripe](https://stripe.com/docs/api/python)
 
 # TensorFlow
 [TensorFlow and Deep Learning](https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/#0)

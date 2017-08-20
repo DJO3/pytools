@@ -8,4 +8,4 @@ services:
     container_name: stripe
     volumes:
       - ./:/usr/local/stripe
-    # command: python /usr/local/stripe/temp.py
+    command: python /usr/local/stripe/temp.py
