@@ -2,3 +2,5 @@
 TESTS-*.xml
 
 ansible/db/data/*
+
+stripe/.env
