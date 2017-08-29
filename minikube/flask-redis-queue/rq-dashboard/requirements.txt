@@ -1,0 +1,12 @@
+arrow==0.10.0
+click==6.7
+Flask==0.12.2
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+python-dateutil==2.6.1
+redis==2.10.6
+rq==0.8.1
+rq-dashboard==0.3.8
+six==1.10.0
+Werkzeug==0.12.2
