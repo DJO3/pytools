@@ -8,14 +8,15 @@ metadata:
     tier: frontend
   name: rq-dashboard
 spec:
+  type: NodePort
   ports:
   - port: 9181
     protocol: TCP
     targetPort: 9181
+    nodePort: 30020
   selector:
     app: rq
     role: dashboard
     tier: frontend
-  type: NodePort
 status:
   loadBalancer: {}
