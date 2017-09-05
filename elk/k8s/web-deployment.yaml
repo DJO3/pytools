@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flask
+    tier: frontend
+  name: elk-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+      tier: frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flask
+        tier: frontend
+    spec:
+      containers:
+      - env:
+        - name: HELLO
+          value: WORLD
+        imagePullPolicy: Always
+        image: localhost:5000/elk-web:1.0.0
+        name: elk-web
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+status: {}
