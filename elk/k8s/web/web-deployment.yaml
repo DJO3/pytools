@@ -26,6 +26,9 @@ spec:
           value: WORLD
         imagePullPolicy: Always
         image: localhost:5000/elk-web:1.0.0
+        volumeMounts:
+        - name: web
+          mountPath: /opt/www/web
         name: elk-web
         ports:
         - containerPort: 5000
@@ -33,4 +36,8 @@ spec:
           requests:
             cpu: 100m
             memory: 100Mi
+      volumes:
+      - name: web
+        hostPath:
+            path: PWD_WEB
 status: {}
