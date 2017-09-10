@@ -2,10 +2,12 @@ version: "3"
 services:
   python:
     env_file: .env
+    ports:
+      - 5000:5000
     build:
       context: ./
       dockerfile: Dockerfile
     container_name: stripe
     volumes:
       - ./:/usr/local/stripe
-    command: python /usr/local/stripe/temp.py
+    command: python /usr/local/stripe/app.py
