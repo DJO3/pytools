@@ -6,5 +6,5 @@
 1. `git clone https://github.com/DJO3/pytools.git`
 2. `cd pytools/elk`
 3. `minikube start`
-4. `./k8s/web-setup.sh`
+4. `./k8s/web/web-setup.sh`
 5. 
