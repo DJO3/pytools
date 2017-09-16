@@ -1,0 +1,12 @@
+version: "3"
+services:
+  python:
+    env_file: .env
+    ports:
+      - 5000:5000
+    build:
+      context: ./
+    container_name: zappa
+    volumes:
+      - ./:/opt/www/web
+    command: bash -c "source /usr/local/bin/virtualenvwrapper.sh && workon main && python app.py"
