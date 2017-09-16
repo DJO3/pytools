@@ -2,7 +2,7 @@
 1. [Docker Community Edition](https://www.docker.com/community-edition)
     * Tested on Windows 10 Build 15063.540
     * Docker CE Version 17.06.0-ce-win19 (12801)
-2. [AWS] (https://aws.amazon.com)
+2. [AWS](https://aws.amazon.com)
     * You will need an AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
     * You will need a user and policy for deploying to AWS Lamdba (see below for instructions)
 
@@ -14,7 +14,7 @@
 5. Click Attach existing policies directly
 6. Click Create policy button
 7. Create your own policy named zappa-lamdba and whatever description you want.
-8. In the Policy Document section, paste in the following json, substituting <account_id> with your [Account ID] (http://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html) 
+8. In the Policy Document section, paste in the following json, substituting <account_id> with your [Account ID](http://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html) 
 
 ```json
 {
@@ -124,5 +124,4 @@
 9. After about a minute the deployment will be live and zappa will tell you what url the content is availabe at. 
 
 # Credit
-aws_zappa_policy.json
-https://github.com/Miserlou/Zappa/issues/244
+[aws_zappa_policy.json](https://github.com/Miserlou/Zappa/issues/244)
