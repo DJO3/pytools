@@ -3,18 +3,18 @@
     * Tested on Windows 10 Build 15063.540
     * Docker CE Version 17.06.0-ce-win19 (12801)
 2. [AWS](https://aws.amazon.com)
-    * You will need an AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+    * You will need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
     * You will need a user and policy for deploying to AWS Lamdba (see below for instructions)
 
 # Creating an AWS User and Policy
-1. Navigate to https://console.aws.amazon.com/iam/home?region=us-east-1#/users$new?step=details
+1. Navigate to [AWS Users](https://console.aws.amazon.com/iam/home?region=us-east-1#/users$new?step=details)
 2. Create a User name
 3. Select Programmatic Access
 4. Click Next: Permissions button
 5. Click Attach existing policies directly
 6. Click Create policy button
 7. Create your own policy named zappa-lamdba and whatever description you want.
-8. In the Policy Document section, paste in the following json, substituting <account_id> with your [Account ID](http://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html) 
+8. In the Policy Document section, paste in the following json, substituting `<account_id>` with your [Account ID](http://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html) 
 
 ```json
 {
@@ -111,12 +111,12 @@
 }
 ```
 9. Validate the policy, create the policy, review the user and policy, complete.
-10. Take note of the ID and Secret key that are generated, these will correspond to AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY set in our .env file for zappa. 
+10. Take note of the ID and Secret key that are generated, these will correspond to `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` set in our .env file for zappa. 
 
 # Getting Started
 1. `git clone https://github.com/DJO3/pytools.git`
 2. `cd pytools/zappa`
-4. Open .env and set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to the values associated with your zappa user. 
+4. Open .env and set `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to the values associated with your zappa user. 
 5. `docker-compose build`
 6. `docker-compose up -d`
 7. `docker exec -it zappa bash`
