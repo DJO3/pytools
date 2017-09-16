@@ -42,6 +42,7 @@
                 "lambda:CreateFunction",
                 "lambda:DeleteFunction",
                 "lambda:GetFunction",
+                "lambda:GetFunctionConfiguration",
                 "lambda:GetPolicy",
                 "lambda:ListVersionsByFunction",
                 "lambda:RemovePermission",
@@ -58,7 +59,7 @@
                 "route53:ListHostedZones",
                 "route53:ChangeResourceRecordSets",
                 "route53:GetHostedZone",
-                "s3:CreateBucket",
+                "s3:CreateBucket"
             ],
             "Resource": [
                 "*"

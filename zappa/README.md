@@ -77,7 +77,7 @@
                 "route53:ListHostedZones",
                 "route53:ChangeResourceRecordSets",
                 "route53:GetHostedZone",
-                "s3:CreateBucket",
+                "s3:CreateBucket"
             ],
             "Resource": [
                 "*"
@@ -122,6 +122,7 @@
 7. `docker exec -it zappa bash`
 8. `zappa deploy dev`
 9. After about a minute the deployment will be live and zappa will tell you what url the content is availabe at. 
+10. If you ever forgot your deployment endpoint, it will be availble via the [AWS API Gateway](https://console.aws.amazon.com/apigateway/home?region=us-east-1#/apis)
 
 # Credit
 [aws_zappa_policy.json](https://github.com/Miserlou/Zappa/issues/244)
