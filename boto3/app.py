@@ -13,7 +13,7 @@ s3 = boto3.resource('s3', aws_access_key_id=aws_access_key_id, aws_secret_access
 bucket = s3.Bucket(bucket_name)
 
 rand = random.randrange
-blocked_url = f"google.com/this/is/unsafe/"
+blocked_url = f"google.com/this/is/unsafe/{rand}"
 blocked_url_hash = hashlib.sha256(blocked_url.encode('utf-8')).hexdigest()
 
 print(blocked_url_hash)
