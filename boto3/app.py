@@ -5,9 +5,9 @@ import random
 import boto3
 
 
-aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID")
-aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY")
-bucket_name = "blocklist-test"
+aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
+aws_secret_access_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
+bucket_name = os.environ.get("AWS_BUCKET")
 
 s3 = boto3.resource('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
 bucket = s3.Bucket(bucket_name)
